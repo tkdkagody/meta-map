@@ -1,27 +1,23 @@
-import AnimatedBox from "../components/AnimatedBox";
-import { Canvas, useThree } from "@react-three/fiber";
-import { OrbitControls } from "three/examples/jsm/controls/OrbitControls";
-import { useEffect } from "react";
+import type { NextPage } from "next";
+import { Canvas } from "@react-three/fiber";
+import { OrbitControls, Stats, useTexture } from "@react-three/drei";
+import Lights from "../components/Lights";
+import Ground from "../components/Ground";
+import Trees from "../components/Trees";
 
-const CameraOrbitController = () => {
-  const { camera, gl } = useThree();
-  useEffect(() => {
-    const controls = new OrbitControls(camera, gl.domElement);
-    return () => {
-      controls.dispose();
-    };
-  }, [camera, gl]);
-  return null;
-};
+const Home: NextPage = () => {
+  const testing = true;
 
-const Home = () => {
   return (
     <div className="container">
-      <Canvas>
-        <CameraOrbitController />
-        <ambientLight intensity={0.1} />
-        <directionalLight color={"red"} position={[0, 0, 5]} />
-        <AnimatedBox />
+      <Canvas shadows>
+        {testing ? <Stats /> : null}
+        {testing ? <axesHelper args={[2]} /> : null}
+        {testing ? <gridHelper args={[10, 10]} /> : null}
+        <OrbitControls />
+        <Trees boundary={50} count={20} />
+        <Lights />
+        <Ground />
       </Canvas>
     </div>
   );
