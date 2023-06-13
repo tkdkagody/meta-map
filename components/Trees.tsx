@@ -44,7 +44,6 @@ const Trees: React.FC<props> = ({ boundary, count }) => {
   };
 
   const isOverlapping = (index: number, tree: any, trees: any[]) => {
-    console.log("tree.position", tree.position);
     const minTargetX = tree.position.x - tree.box / 2;
     const maxTargetX = tree.position.x + tree.box / 2;
     const minTargetZ = tree.position.z - tree.box / 2;
@@ -100,7 +99,7 @@ const Trees: React.FC<props> = ({ boundary, count }) => {
     for (let i = 0; i < count; i++) {
       tempTrees.push({ position: { x: 0, z: 0 }, box: 1 });
     }
-    console.log(tempTrees, "temptrees");
+
     updatePosition(tempTrees, boundary);
   }, [boundary, count]);
 

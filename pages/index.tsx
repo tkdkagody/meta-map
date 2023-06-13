@@ -1,9 +1,27 @@
 import type { NextPage } from "next";
 import { Canvas } from "@react-three/fiber";
-import { OrbitControls, Stats, useTexture } from "@react-three/drei";
+import {
+  OrbitControls,
+  Stats,
+  useAnimations,
+  useGLTF,
+} from "@react-three/drei";
 import Lights from "../components/Lights";
 import Ground from "../components/Ground";
 import Trees from "../components/Trees";
+import { useEffect } from "react";
+
+const MyCube = () => {
+  const model = useGLTF("/models/cube.glb");
+  const { actions } = useAnimations(model.animations, model.scene);
+  console.log(model, "model");
+
+  useEffect(() => {
+    actions?.bounce?.play();
+  }, []);
+
+  return <primitive object={model.scene} />;
+};
 
 const Home: NextPage = () => {
   const testing = true;
@@ -15,8 +33,9 @@ const Home: NextPage = () => {
         {testing ? <axesHelper args={[2]} /> : null}
         {testing ? <gridHelper args={[10, 10]} /> : null}
         <OrbitControls />
-        <Trees boundary={100} count={50} />
+        <Trees boundary={50} count={50} />
         <Lights />
+        <MyCube />
         <Ground />
       </Canvas>
     </div>
