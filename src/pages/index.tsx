@@ -52,12 +52,7 @@ const MyPlayer = () => {
     }
   }, [foward, backward, left, right, jump, shift]);
 
-  return (
-    <primitive
-      object={model.scene}
-      //scale={[1.2, 1.2, 1.2]}
-    />
-  );
+  return <primitive object={model.scene} />;
 };
 
 const Home: NextPage = () => {

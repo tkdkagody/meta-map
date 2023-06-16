@@ -11,10 +11,10 @@ export const useInput = () => {
   });
 
   const keys = {
-    keyW: "foward",
-    keyS: "backward",
-    keyA: "left",
-    keyD: "right",
+    KeyW: "foward",
+    KeyS: "backward",
+    KeyA: "left",
+    KeyD: "right",
     ShiftLeft: "shift",
     Space: "jump",
   };
@@ -39,6 +39,6 @@ export const useInput = () => {
       document.addEventListener("keyup", handleKeyUp);
     };
   }, []);
-  console.log(input);
+
   return input;
 };
