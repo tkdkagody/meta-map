@@ -2,10 +2,12 @@ import { useHelper } from "@react-three/drei";
 import { useRef } from "react";
 import { DirectionalLightHelper } from "three";
 
-const Lights: React.FC = () => {
+type Props = {
+  testing: boolean;
+};
+const Lights: React.FC<Props> = ({ testing }) => {
   const lightRef = useRef<THREE.DirectionalLight>(null!);
-
-  useHelper(lightRef, DirectionalLightHelper, 5, "red");
+  if (testing) useHelper(lightRef, DirectionalLightHelper, 5, "red");
 
   return (
     <>

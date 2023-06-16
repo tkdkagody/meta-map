@@ -57,7 +57,7 @@ const Player = () => {
 
     //update camera target
     cameraTarget.x = model.scene.position.x;
-    cameraTarget.y = model.scene.position.y + 2;
+    cameraTarget.y = model.scene.position.y - 1;
     cameraTarget.z = model.scene.position.z;
     if (controlsRef.current) controlsRef.current.target = cameraTarget;
   };
