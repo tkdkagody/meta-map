@@ -6,6 +6,7 @@ import Ground from "../components/Ground";
 import Trees from "../components/Trees";
 import Player from "../components/Player";
 import { Suspense } from "react";
+import Intro from "../components/portfolio/into";
 
 const Home: NextPage = () => {
   const testing = false;
@@ -21,10 +22,10 @@ const Home: NextPage = () => {
             {testing ? <gridHelper args={[50, 50]} /> : null}
 
             <OrbitControls />
-            <Trees boundary={40} count={20} />
-
+            <Trees boundary={50} count={30} />
             <Lights testing={testing} />
             <Player />
+            <Intro />
             <Ground />
           </PerspectiveCamera>
         </Suspense>
