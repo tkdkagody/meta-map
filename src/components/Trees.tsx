@@ -112,7 +112,7 @@ const Trees: React.FC<props> = ({ boundary, count }) => {
               <boxGeometry />
               <meshBasicMaterial color={"blue"} wireframe />
             </mesh>
-            <primitive object={model.scene.clone()} scale={[0.2, 0.2, 0.2]} />
+            <primitive object={model.scene.clone()} scale={[0.4, 0.4, 0.4]} />
           </object3D>
         );
       })}

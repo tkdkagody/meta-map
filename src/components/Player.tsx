@@ -38,7 +38,7 @@ const Player = () => {
   const model = useGLTF("/models/mouse.glb");
   const { actions } = useAnimations(model.animations, model.scene);
 
-  model.scene.scale.set(1, 1, 1);
+  model.scene.scale.set(2.5, 2.5, 2.5);
 
   model.scene.traverse((obj) => {
     if (obj.isMesh) {
