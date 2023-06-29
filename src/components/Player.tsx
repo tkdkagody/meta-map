@@ -38,7 +38,7 @@ const Player = () => {
   const model = useGLTF("/models/mouse.glb");
   const { actions } = useAnimations(model.animations, model.scene);
 
-  model.scene.scale.set(2.5, 2.5, 2.5);
+  model.scene.scale.set(10, 10, 10);
 
   model.scene.traverse((obj) => {
     if (obj.isMesh) {
@@ -120,7 +120,7 @@ const Player = () => {
       walkDirection.applyAxisAngle(rotateAngle, newDirectionOffset);
 
       //run/walk velocity
-      const velocity = currentAction.current == "running" ? 10 : 5;
+      const velocity = currentAction.current == "running" ? 30 : 15;
 
       //move model & camera
       const moveX = walkDirection.x * velocity * delta;
