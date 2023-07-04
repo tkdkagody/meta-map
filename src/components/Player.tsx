@@ -9,7 +9,7 @@ let rotateAngle = new THREE.Vector3(0, 1, 0);
 let rotateQuarternion = new THREE.Quaternion();
 let cameraTarget = new THREE.Vector3();
 
-const directionOffset = ({ foward, backward, left, right }) => {
+const directionOffset = ({ foward, backward, left, right }: any) => {
   let directionOffset = 0;
   if (foward) {
     if (left) {
@@ -40,14 +40,14 @@ const Player = () => {
 
   model.scene.scale.set(10, 10, 10);
 
-  model.scene.traverse((obj) => {
-    if (obj.isMesh) {
-      obj.castShadow = true;
-    }
-  });
+  // model.scene.traverse((obj) => {
+  //   if (obj.isMesh) {
+  //     obj.castShadow = true;
+  //   }
+  // });
 
   const currentAction = useRef("");
-  const controlsRef = useRef<typeof OrbitControls>();
+  const controlsRef = useRef<any>(); //any!!
   const camera = useThree((state) => state.camera);
 
   const updateCameraTarget = (moveX: number, moveZ: number) => {

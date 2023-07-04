@@ -10,7 +10,7 @@ export const useInput = () => {
     jump: false,
   });
 
-  const keys = {
+  const keys: any = {
     KeyW: "foward",
     KeyS: "backward",
     KeyA: "left",
@@ -23,11 +23,11 @@ export const useInput = () => {
   const findKey = (key: string) => keys[key];
 
   useEffect(() => {
-    const handleKeyDown = (e) => {
+    const handleKeyDown = (e: any) => {
       setInput((k) => ({ ...k, [findKey(e.code)]: true }));
     };
 
-    const handleKeyUp = (e) => {
+    const handleKeyUp = (e: any) => {
       setInput((k) => ({ ...k, [findKey(e.code)]: false }));
     };
 

@@ -18,11 +18,11 @@ const Trees: React.FC<props> = ({ boundary, count }) => {
   const [trees, setTrees] = useState<treeType[]>([]);
 
   //gltf 씬 안의 속성 조정하려면 traverse사용
-  model.scene.traverse((obj) => {
-    if (obj.isMesh) {
-      obj.castShadow = true;
-    }
-  });
+  // model.scene.traverse((obj) => {
+  //   if (obj.isMesh) {
+  //     obj.castShadow = true;
+  //   }
+  // });
 
   const boxIntersect = (
     minAx: number,

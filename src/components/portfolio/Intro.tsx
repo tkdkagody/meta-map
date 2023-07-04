@@ -1,11 +1,11 @@
 import React from "react";
 import Caravan from "./Caravan";
-import FirstHouse from "./firsthouse";
+import House from "./House";
 
 const Intro: React.FC = () => {
   return (
     <>
-      <FirstHouse />
+      <House />
       <Caravan />
     </>
   );

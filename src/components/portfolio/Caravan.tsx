@@ -4,7 +4,6 @@ import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader";
 
 const Caravan = () => {
   const model = useLoader(GLTFLoader, "./models/caravan.glb");
-  console.log(model.scene);
   model.scene.traverse((obj) => {
     if (obj.castShadow) {
       obj.castShadow = true;

@@ -7,7 +7,6 @@ type Props = {
 };
 const Lights: React.FC<Props> = ({ testing }) => {
   const lightRef = useRef<THREE.DirectionalLight>(null!);
-  if (testing) useHelper(lightRef, DirectionalLightHelper, 100, "red");
 
   return (
     <>

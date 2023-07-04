@@ -2,14 +2,14 @@ import { useLoader } from "@react-three/fiber";
 import React from "react";
 import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader";
 
-const FirstHouse = () => {
+const House = () => {
   const model = useLoader(GLTFLoader, "./models/house1.glb");
 
-  model.scene.traverse((obj) => {
-    if (obj.isMesh) {
-      obj.castShadow = true;
-    }
-  });
+  // model.scene.traverse((obj) => {
+  //   if (obj.isMesh) {
+  //     obj.castShadow = true;
+  //   }
+  // });
 
   return (
     <>
@@ -23,4 +23,4 @@ const FirstHouse = () => {
   );
 };
 
-export default FirstHouse;
+export default House;
